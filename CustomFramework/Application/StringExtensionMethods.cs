@@ -116,7 +116,7 @@ namespace CustomFramework.Application
         
         public static string ToShortFileName(this DateTime date)
         {
-            return $"{date.Month}{date.Day}{date.Hour}{date.Minute}{date.Second}";
+            return $"{date.Month}{date.Day}{date.Hour}{date.Minute}";
         }
 
         public static string Slugify(this string phrase)

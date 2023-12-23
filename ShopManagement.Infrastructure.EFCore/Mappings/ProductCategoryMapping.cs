@@ -15,13 +15,14 @@ namespace ShopManagement.Infrastructure.EFCore.Mappings
         {
            builder.ToTable("ProductCategories");
            builder.HasKey(x => x.Id);
-           builder.Property(x => x.Name).HasMaxLength(50).IsRequired();
+           builder.Property(x => x.Name).HasMaxLength(100).IsRequired();
            builder.Property(x => x.Image).HasMaxLength(500).IsRequired();
            builder.Property(x => x.ImageAlt).HasMaxLength(120).IsRequired();
            builder.Property(x => x.ImageTitle).HasMaxLength(80).IsRequired();
            builder.Property(x => x.Description).HasMaxLength(1000).IsRequired();
            builder.Property(x => x.MetaDescription).HasMaxLength(500).IsRequired();
            builder.Property(x => x.Keywords).HasMaxLength(300).IsRequired();
+           builder.Property(x => x.Slug).HasMaxLength(150).IsRequired();
             
         }
     }

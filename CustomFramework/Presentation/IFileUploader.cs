@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _0_SelfBuildFramwork.Application
+namespace CustomFramework.Presentation
 {
     public interface IFileUploader
     {

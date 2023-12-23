@@ -1,4 +1,4 @@
-﻿using _0_SelfBuildFramwork.Application;
+﻿using CustomFramework.Presentation;
 using CustomFramework.Application;
 using ShopManagement.Application.Contract.ProductCategory;
 using ShopManagement.Domain.ProductCategoryAgg;
@@ -25,7 +25,7 @@ namespace ShopManagement.Application
             }
 
             var slug = command.Slug.Slugify();
-            var ImagePath = _uploader.Upload(command.Image, command.Slug,"Products");
+            var ImagePath = _uploader.Upload(command.Image, command.Slug,"ProductsImage");
             var Category = new ProductCategory(command.Name,ImagePath,command.ImageAlt,command.ImageTitle,command.Description,command.MetaDescription,command.Keywords,slug);
             await _categoryRepository.Create(Category);
             await _categoryRepository.SaveChange();
@@ -48,7 +48,7 @@ namespace ShopManagement.Application
             }
 
             var slug = command.Slug.Slugify();
-            var ImagePath = _uploader.Upload(command.Image, command.Slug, "Products");
+            var ImagePath = _uploader.Upload(command.Image, command.Slug, "ProductsImage");
             Category.Edit(command.Name, ImagePath, command.ImageAlt, command.ImageTitle, command.Description, command.MetaDescription, command.Keywords, slug);
              _categoryRepository.Update(Category);
             await _categoryRepository.SaveChange();

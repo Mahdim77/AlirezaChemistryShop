@@ -17,11 +17,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagement.Domain", "Sh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagement.Infrastructure.EFCore", "ShopManagement.Infrastructure.EFCore\ShopManagement.Infrastructure.EFCore.csproj", "{398CDF65-3624-4F1C-9909-8D876390EFB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagement.Application.Contract", "ShopManagement.Application.Contract\ShopManagement.Application.Contract.csproj", "{D2ED7622-6CEE-42D5-B23C-C65079B8224E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagement.Application.Contract", "ShopManagement.Application.Contract\ShopManagement.Application.Contract.csproj", "{D2ED7622-6CEE-42D5-B23C-C65079B8224E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagement.Application", "ShopManagement.Application\ShopManagement.Application.csproj", "{7E0A7AE1-BD3B-4089-BD07-259525309BE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagement.Application", "ShopManagement.Application\ShopManagement.Application.csproj", "{7E0A7AE1-BD3B-4089-BD07-259525309BE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopManagement.Infrastructure.Bootstrapper", "ShopManagement.Infrastructure.Bootstrapper\ShopManagement.Infrastructure.Bootstrapper.csproj", "{8967D4C0-616D-4671-930D-A7E29F8D9E56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagement.Infrastructure.Bootstrapper", "ShopManagement.Infrastructure.Bootstrapper\ShopManagement.Infrastructure.Bootstrapper.csproj", "{8967D4C0-616D-4671-930D-A7E29F8D9E56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceHost", "ServiceHost\ServiceHost.csproj", "{0EE947C7-EDC8-4B35-B8BF-4410E1B4CA45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{8967D4C0-616D-4671-930D-A7E29F8D9E56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8967D4C0-616D-4671-930D-A7E29F8D9E56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8967D4C0-616D-4671-930D-A7E29F8D9E56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EE947C7-EDC8-4B35-B8BF-4410E1B4CA45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EE947C7-EDC8-4B35-B8BF-4410E1B4CA45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EE947C7-EDC8-4B35-B8BF-4410E1B4CA45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EE947C7-EDC8-4B35-B8BF-4410E1B4CA45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
