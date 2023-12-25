@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagement.Application"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopManagement.Infrastructure.Bootstrapper", "ShopManagement.Infrastructure.Bootstrapper\ShopManagement.Infrastructure.Bootstrapper.csproj", "{8967D4C0-616D-4671-930D-A7E29F8D9E56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceHost", "ServiceHost\ServiceHost.csproj", "{0EE947C7-EDC8-4B35-B8BF-4410E1B4CA45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceHost", "ServiceHost\ServiceHost.csproj", "{0EE947C7-EDC8-4B35-B8BF-4410E1B4CA45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

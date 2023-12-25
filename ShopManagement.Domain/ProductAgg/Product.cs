@@ -48,6 +48,10 @@ namespace ShopManagement.Domain.ProductAgg
         public void Edit(string name, string image, string imageAlt, string imageTitle, string shortDescription, string description, string keywords, string slug, string metaDescription, string casNumber, string formula, long productCategoryId, string measurementUnit)
         {
             Name = name;
+            if (!string.IsNullOrEmpty(image))
+            {
+                Image = image;
+            }
             Image = image;
             ImageAlt = imageAlt;
             ImageTitle = imageTitle;
@@ -76,6 +80,15 @@ namespace ShopManagement.Domain.ProductAgg
         public void NotAvailable()
         {
             IsInStock= false;
+        }
+
+        public void AssignCompanies(List<ProductCompany> companies)
+        {
+            ProductCompanies = companies;
+            foreach (var company in companies)
+            {
+                company.AssignProduct(this);
+            }
         }
     }
 }

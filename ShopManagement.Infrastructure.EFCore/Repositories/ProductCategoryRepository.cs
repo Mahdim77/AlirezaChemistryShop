@@ -19,6 +19,15 @@ namespace ShopManagement.Infrastructure.EFCore.Repositories
             _shopContext = shopContext;
         }
 
+        public async Task<List<ProductCategorySelectBoxDto>> GetCategorySelectBox()
+        {
+            return await _shopContext.ProductCategories.Select(x => new ProductCategorySelectBoxDto
+            {
+                Id = x.Id,
+                Name = x.Name,
+            }).ToListAsync();
+        }
+
         public async Task<EditProductCategory> GetDetails(long id)
         {
             var productCategory = await _shopContext.ProductCategories

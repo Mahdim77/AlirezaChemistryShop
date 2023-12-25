@@ -16,5 +16,7 @@ namespace ShopManagement.Application.Contract.ProductCategory
         Task<EditProductCategory> GetDetails(long id);
         
         Task<List<ProductCategoryViewModel>> Search(ProductCategorySearchModel model);
+
+        Task<List<ProductCategorySelectBoxDto>> GetCategorySelectBox();
     }
 }

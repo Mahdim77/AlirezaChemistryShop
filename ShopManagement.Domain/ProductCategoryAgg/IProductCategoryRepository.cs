@@ -13,5 +13,7 @@ namespace ShopManagement.Domain.ProductCategoryAgg
         Task<EditProductCategory> GetDetails(long id);
 
         Task<List<ProductCategoryViewModel>> Search(ProductCategorySearchModel model);
+
+        Task<List<ProductCategorySelectBoxDto>> GetCategorySelectBox();
     }
 }

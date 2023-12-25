@@ -55,6 +55,11 @@ namespace ShopManagement.Application
             return operation.Succedded();
         }
 
+        public async Task<List<ProductCategorySelectBoxDto>> GetCategorySelectBox()
+        {
+           return await _categoryRepository.GetCategorySelectBox();
+        }
+
         public async Task<EditProductCategory> GetDetails(long id)
         {
             return await _categoryRepository.GetDetails(id);
