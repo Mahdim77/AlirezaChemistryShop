@@ -10,5 +10,9 @@ namespace ShopManagement.Domain.ProductAgg
         string GetCategorySlug(long categoryId);
 
         Task<List<ProductViewModel>> Search(ProductSearchModel model);
+
+        void RemoveProductCompany(ProductCompany productCompany);
+
+        Task<Product> GetWithCompanies(long id);
     }
 }

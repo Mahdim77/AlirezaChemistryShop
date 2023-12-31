@@ -28,6 +28,11 @@ namespace ShopManagement.Domain.ProductAgg
         public string MeasurementUnit { get; private set; }
         public List<ProductCompany> ProductCompanies { get; private set; }
 
+        public Product()
+        {
+
+        }
+
         public Product(string name, string image, string imageAlt, string imageTitle, string shortDescription, string description, string keywords, string slug, string metaDescription, string casNumber, string formula, long productCategoryId, string measurementUnit)
         {
             Name = name;
@@ -48,11 +53,10 @@ namespace ShopManagement.Domain.ProductAgg
         public void Edit(string name, string image, string imageAlt, string imageTitle, string shortDescription, string description, string keywords, string slug, string metaDescription, string casNumber, string formula, long productCategoryId, string measurementUnit)
         {
             Name = name;
-            if (!string.IsNullOrEmpty(image))
+            if (!string.IsNullOrWhiteSpace(image))
             {
                 Image = image;
             }
-            Image = image;
             ImageAlt = imageAlt;
             ImageTitle = imageTitle;
             ShortDescription = shortDescription;

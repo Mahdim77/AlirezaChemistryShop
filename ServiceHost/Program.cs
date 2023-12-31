@@ -1,3 +1,4 @@
+using BlogManagement.Infrastracture.Config;
 using CustomFramework.Presentation;
 using ShopManagement.Infrastructure.Bootstrapper;
 
@@ -13,6 +14,7 @@ namespace ServiceHost
             builder.Services.AddRazorPages();
             var connectionstring = builder.Configuration.GetConnectionString("ChemistryShop");
             ShopManagementBootstrapper.Configure(builder.Services, connectionstring);
+            BlogManagementBootstrapper.Configure(builder.Services, connectionstring);
             builder.Services.AddScoped<IFileUploader,FileUploader>();
 
 

@@ -42,10 +42,26 @@ namespace ShopManagement.Infrastructure.EFCore.Repositories
              Name = x.Name,
              MetaDescription = x.MetaDescription,
              ProductCategoryId = x.ProductCategoryId,
+             ProductCompanies = x.ProductCompanies.Select(x => x.CompanyId).ToList()
              
             }).FirstOrDefaultAsync(x => x.Id == id);
 
             return selectedProduct ?? new EditProduct();
+        }
+
+        public async Task<Product> GetWithCompanies(long id)
+        {
+            return await _shopContext.Products.Include(x => x.ProductCompanies).FirstOrDefaultAsync(x => x.Id == id) ?? new Product();
+            
+        }
+
+        public void RemoveProductCompany(ProductCompany productCompany)
+        {
+            if ( productCompany != null)
+            {
+                 _shopContext.ProductCompanies.Remove(productCompany);
+                
+            }
         }
 
         public async Task<List<ProductViewModel>> Search(ProductSearchModel model)

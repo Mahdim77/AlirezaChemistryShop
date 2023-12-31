@@ -19,7 +19,7 @@ namespace CustomFramework.Application
                 _AllowExtensions = allowExtentions;
             }
 
-            public override bool IsValid(object value)
+            public override bool IsValid(object? value)
             {
                 var file = value as IFormFile;
                 if (file == null)

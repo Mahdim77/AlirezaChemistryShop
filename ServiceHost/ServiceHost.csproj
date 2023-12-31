@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\MahinaShop\MahinaBoutique\BlogManagement.Infrastracture.Config\BlogManagement.Infrastracture.Config.csproj" />
     <ProjectReference Include="..\ShopManagement.Infrastructure.Bootstrapper\ShopManagement.Infrastructure.Bootstrapper.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\ProductsImage\اسید-قوی\احمد-کاو\" />
   </ItemGroup>
 
 </Project>

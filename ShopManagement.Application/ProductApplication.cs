@@ -64,7 +64,7 @@ namespace ShopManagement.Application
         public async Task<OperationResult> Edit(EditProduct command)
         {
             var operation = new OperationResult();
-            var selectedProduct = await _productRepository.Get(command.Id);
+            var selectedProduct = await _productRepository.GetWithCompanies(command.Id);
             if (selectedProduct == null)
             {
                 return operation.Failed(ApplicationMessages.NullRecordMessage);
@@ -73,8 +73,8 @@ namespace ShopManagement.Application
             {
                 return operation.Failed(ApplicationMessages.DupplicatedMessage);
             }
+
             var slug = command.Slug.Slugify();
-            
             var categoryslug = _productRepository.GetCategorySlug(command.ProductCategoryId);
             var folder = $"{categoryslug}/{command.Slug}";
 
@@ -82,12 +82,36 @@ namespace ShopManagement.Application
             selectedProduct.Edit(command.Name, ImagePath, command.ImageAlt, command.ImageTitle, command.ShortDescription,
                 command.Description, command.Keywords, slug, command.MetaDescription, command.CasNumber,
                 command.Formula, command.ProductCategoryId, command.MeasurementUnit);
+            var productcompany = new List<ProductCompany>();
+
+            var currentCompanies = selectedProduct.ProductCompanies?.Select(x => x.CompanyId).ToList() ?? new List<long>();
+
+         
+            var companiesToRemove = currentCompanies.Except(command.ProductCompanies).ToList();
+            foreach (var companyId in companiesToRemove)
+            {
+                var productCompanyToRemove = selectedProduct.ProductCompanies?.FirstOrDefault(pc => pc.CompanyId == companyId);
+                if (productCompanyToRemove != null)
+                {
+                    _productRepository.RemoveProductCompany(productCompanyToRemove);
+                    await _productRepository.SaveChange();
+                }
+            }
+
+          
+            var newCompanies = command.ProductCompanies.Except(currentCompanies).ToList();
+            foreach (var companyId in newCompanies)
+            {
+                selectedProduct.ProductCompanies.Add(new ProductCompany(selectedProduct.Id, companyId));
+               
+            }
             await _productRepository.SaveChange();
             return operation.Succedded();
         }
 
         public Task<EditProduct> GetDetails(long id)
         {
+
             return _productRepository.GetDetails(id);
         }
 

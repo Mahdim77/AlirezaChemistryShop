@@ -104,26 +104,26 @@
                                             }
 
 
-                                        <td style="display: flex;justify-content: center;">
-                                            <a class="btn btn-warning waves-effect waves-light pt-5 m-5"
-                                                   href="#showmodal=@Url.Page("./Index", "Edit", new { id = item.Id})">
-                                                    <i class="fa fa-edit"></i> ویرایش
+                                        <td style="text-align: center;">
+                                            <a class="btn btn-warning waves-effect waves-light" asp-page="./Edit" asp-route-id="@item.Id">
+                                                   
+                                                     ویرایش
                                                 </a>
                                                 @if (!item.IsDeleted)
                                                 {
-                                                    <a asp-page="./Index" asp-page-handler="Remove" asp-route-id="@item.Id" class="btn btn-danger waves-effect waves-light pt-5 m-5">حذف</a>
+                                                <a asp-page="./Index" asp-page-handler="Remove" asp-route-id="@item.Id" class="btn btn-danger  waves-effect waves-light pt-5 m-5"><i class="fa fa-trash"></i>حذف</a>
                                                 }
                                                 else
                                                 {
-                                                    <a asp-page="./Index" asp-page-handler="Restore" asp-route-id="@item.Id" class="btn btn-success waves-effect waves-light pt-5 m-5">بازگرداندن</a>
+                                                <a asp-page="./Index" asp-page-handler="Restore" asp-route-id="@item.Id" class="btn btn-success  waves-effect waves-light pt-5 m-5"><i class="fa fa-refresh"></i>بازگرداندن </a>
                                                 }
                                                 @if (item.IsInStock == true)
                                                 {
-                                                    <a asp-page="./Index" asp-page-handler="MakeUnavailable" asp-route-id="@item.Id" class="btn btn-danger waves-effect waves-light pt-5 m-5">ناموجود</a>
+                                                <a asp-page="./Index" asp-page-handler="MakeUnavailable" asp-route-id="@item.Id" class="btn btn-danger  waves-effect waves-light pt-5 m-5"><i class="fa fa-archive"></i> ناموجود</a>
                                                 }
                                                 else
                                                 {
-                                                    <a asp-page="./Index" asp-page-handler="MakeAvailable" asp-route-id="@item.Id" class="btn btn-success waves-effect waves-light pt-5 m-5">موجود</a>
+                                                <a asp-page="./Index" asp-page-handler="MakeAvailable" asp-route-id="@item.Id" class="btn btn-success waves-effect waves-light pt-5 m-5"><i class="fa fa-trash"></i>موجود</a>
                                                 }
 
                                         </td>
