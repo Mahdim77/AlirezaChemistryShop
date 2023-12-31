@@ -13,6 +13,8 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\ProductsImage\اسید-قوی\احمد-کاو\" />
+    <Folder Include="wwwroot\ProductsImage\اسید-قوی\رضا-چی\" />
+    <Folder Include="wwwroot\ProductsImage\سـسیـ-سی\رضا-چی\" />
   </ItemGroup>
 
 </Project>
